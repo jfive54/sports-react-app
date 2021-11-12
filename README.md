@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# Sports react app
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+[![Node.js CI](https://github.com/jfive54/sports-react-app/actions/workflows/ci.yml/badge.svg)](https://github.com/jfive54/sports-react-app/actions/workflows/ci.yml)
 
 ## Available Scripts
 
