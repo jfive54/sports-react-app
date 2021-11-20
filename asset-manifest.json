@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/sports-react-app/static/css/main.d91a42d5.chunk.css",
-    "main.js": "/sports-react-app/static/js/main.4e23f05c.chunk.js",
-    "main.js.map": "/sports-react-app/static/js/main.4e23f05c.chunk.js.map",
+    "main.css": "/sports-react-app/static/css/main.3ec22194.chunk.css",
+    "main.js": "/sports-react-app/static/js/main.c13d5498.chunk.js",
+    "main.js.map": "/sports-react-app/static/js/main.c13d5498.chunk.js.map",
     "runtime-main.js": "/sports-react-app/static/js/runtime-main.b9faa073.js",
     "runtime-main.js.map": "/sports-react-app/static/js/runtime-main.b9faa073.js.map",
-    "static/css/2.dc28c7b3.chunk.css": "/sports-react-app/static/css/2.dc28c7b3.chunk.css",
-    "static/js/2.c08fcbb6.chunk.js": "/sports-react-app/static/js/2.c08fcbb6.chunk.js",
-    "static/js/2.c08fcbb6.chunk.js.map": "/sports-react-app/static/js/2.c08fcbb6.chunk.js.map",
+    "static/css/2.b761714e.chunk.css": "/sports-react-app/static/css/2.b761714e.chunk.css",
+    "static/js/2.fd63af46.chunk.js": "/sports-react-app/static/js/2.fd63af46.chunk.js",
+    "static/js/2.fd63af46.chunk.js.map": "/sports-react-app/static/js/2.fd63af46.chunk.js.map",
     "index.html": "/sports-react-app/index.html",
-    "static/css/2.dc28c7b3.chunk.css.map": "/sports-react-app/static/css/2.dc28c7b3.chunk.css.map",
-    "static/css/main.d91a42d5.chunk.css.map": "/sports-react-app/static/css/main.d91a42d5.chunk.css.map",
-    "static/js/2.c08fcbb6.chunk.js.LICENSE.txt": "/sports-react-app/static/js/2.c08fcbb6.chunk.js.LICENSE.txt",
+    "static/css/2.b761714e.chunk.css.map": "/sports-react-app/static/css/2.b761714e.chunk.css.map",
+    "static/css/main.3ec22194.chunk.css.map": "/sports-react-app/static/css/main.3ec22194.chunk.css.map",
+    "static/js/2.fd63af46.chunk.js.LICENSE.txt": "/sports-react-app/static/js/2.fd63af46.chunk.js.LICENSE.txt",
     "static/media/index.css": "/sports-react-app/static/media/roboto-latin-900italic.cb5ad999.woff2",
     "static/media/vitamix.css": "/sports-react-app/static/media/vitamix.436c66eb.woff"
   },
   "entrypoints": [
     "static/js/runtime-main.b9faa073.js",
-    "static/css/2.dc28c7b3.chunk.css",
-    "static/js/2.c08fcbb6.chunk.js",
-    "static/css/main.d91a42d5.chunk.css",
-    "static/js/main.4e23f05c.chunk.js"
+    "static/css/2.b761714e.chunk.css",
+    "static/js/2.fd63af46.chunk.js",
+    "static/css/main.3ec22194.chunk.css",
+    "static/js/main.c13d5498.chunk.js"
   ]
 }
