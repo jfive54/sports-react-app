@@ -1,3 +1,18 @@
-.inline-icon{
+@import "~react-vis/dist/style";
+
+.inline-icon {
   display: inherit;
+}
+
+.my-card {
+  width: 100%;
+  min-width: 1000px;
+  padding: 10px;
+  margin-bottom: 0.5rem;
+}
+
+.card-title {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
 }

@@ -1,0 +1,4 @@
+{
+  "TREND_API_URL": "https://europe-west1-possible-coast-332118.cloudfunctions.net/trend/",
+  "SPORT_LIST_URL": "https://sports.api.decathlon.com/sports"
+}

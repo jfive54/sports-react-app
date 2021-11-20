@@ -2,6 +2,7 @@ import React from "react";
 
 import { VtmnTextInput } from "@vtmn/react";
 
+import configData from "../config.json";
 import Sports from "./Sports";
 
 class SportList extends React.Component {
@@ -18,49 +19,67 @@ class SportList extends React.Component {
           <p className="vtmn-text-xl vtmn-text-center vtmn-font-semibold vtmn-text-black">
             Sport
             <span className="vtmn-text-brand-digital vtmn-text-2xl">
-              List <span className="vtmx-sun-fill inline-icon"></span>
+              Trend <span className="vtmx-temp-hot-line inline-icon"></span>
             </span>
           </p>
         </div>
         <div className="vtmn-flex vtmn-justify-around">
           <div>
-          <VtmnTextInput
-            labelText="Filtrer"
-            onChange={this.handleChange}
-            identifier="filter"
-            helperText="Filtrer les sports"
-          />
+            <VtmnTextInput
+              labelText="Filtrer"
+              onChange={this.handleChange}
+              identifier="filter"
+              helperText="Filtrer les sports"
+            />
           </div>
         </div>
         <div className="vtmn-flex vtmn-justify-around">
-          <div className="vtmn-card">
-            <div className="vtmn-card_content">
-              <Sports items={this.state.filterItems} />*
-            </div>
-          </div>
+          <Sports items={this.state.filterItems} />
         </div>
       </div>
     );
   }
 
   componentDidMount() {
-    fetch("https://sports.api.decathlon.com/sports")
+    fetch(configData.SPORT_LIST_URL)
       .then((res) => {
         return res.json();
       })
       .then(({ data }) => {
-        this.setState({ items: data, filterItems: data });
+        this.setState({ items: data, filterItems: this.sortData(data) });
       })
       .catch(console.log);
+  }
+
+  sortData(data) {
+    return data.sort((a, b) =>
+      a.attributes?.name > b.attributes?.name
+        ? 1
+        : b > a.attributes?.name
+        ? -1
+        : 0
+    );
+  }
+
+  cleanSearch(search) {
+    return search
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toUpperCase();
   }
 
   handleChange(e) {
     let itemsCopy = [...this.state.items];
     const filterItems = itemsCopy.filter((sport) =>
-      sport.attributes?.name?.includes(e.target.value)
+      this.cleanSearch(sport.attributes?.name ?? "").includes(
+        this.cleanSearch(e.target.value)
+      )
     );
-    console.log(e.target.value);
-    this.setState({ text: e.target.value, filterItems });
+
+    this.setState({
+      text: e.target.value,
+      filterItems: this.sortData(filterItems),
+    });
   }
 }
 

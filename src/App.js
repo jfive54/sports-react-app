@@ -1,17 +1,17 @@
-import '@vtmn/css/dist/index.css';
-import '@vtmn/icons/dist/vitamix/font/vitamix.css';
-import '@vtmn/css-text-input/dist/index.css';
+import "@vtmn/css/dist/index.css";
+import "@vtmn/icons/dist/vitamix/font/vitamix.css";
+import "@vtmn/css-text-input/dist/index.css";
 
-import 'typeface-roboto';
-import 'typeface-roboto-condensed';
+import "typeface-roboto";
+import "typeface-roboto-condensed";
 
 import "./App.css";
-import SportList from "./components/SportList";
+import SportTrend from "./components/SportTrend";
 
 function App() {
   return (
     <div className="App">
-      <SportList></SportList>
+      <SportTrend></SportTrend>
     </div>
   );
 }
