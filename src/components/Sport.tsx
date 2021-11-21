@@ -1,15 +1,19 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 import { VtmnButton } from "@vtmn/react";
 
 import WithDataChart from "./WithDataChart";
 
-const Sport = ({ sport }) => {
+interface SportDisplay {
+  sport: string;
+}
+
+const Sport = ({ sport }: SportDisplay) => {
   const [expanded, setExpanded] = useState(false);
 
   return (
     <div className="vtmn-card my-card">
-      <div class="card-title">
+      <div className="card-title">
         <h4 onClick={() => setExpanded(!expanded)} className="question-title">
           {sport}
         </h4>

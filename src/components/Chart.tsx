@@ -6,7 +6,14 @@ import {
   LineSeries,
 } from "react-vis";
 
-const Chart = ({ data, sport }) => {
+import { ChartData } from "./interfaces";
+
+type Props = {
+  data: ChartData[];
+  sport: string;
+};
+
+const Chart = ({ data, sport }: Props) => {
   // get only january labels
   const tickValues = data.filter(({ x }) => x.match(/Jan/g)).map(({ x }) => x);
   return (

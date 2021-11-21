@@ -7,7 +7,7 @@ describe("Sport trend", () => {
   test("Sport trend test", async () => {
     const component = await renderer.create(<SportTrend />);
 
-    let sportTrend = component.toJSON();
+    const sportTrend = component.toJSON();
     expect(sportTrend).toMatchSnapshot();
   });
 });

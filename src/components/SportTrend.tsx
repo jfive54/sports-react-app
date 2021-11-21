@@ -5,9 +5,17 @@ import { VtmnTextInput } from "@vtmn/react";
 import { getSports } from "../services/sports-service";
 
 import Sports from "./Sports";
+import { Item } from "./interfaces";
 
-class SportList extends React.Component {
-  constructor(props) {
+interface Props {}
+interface State {
+  items: Item[];
+  filterItems: Item[];
+  text: string;
+}
+
+class SportList extends React.Component<Props, State> {
+  constructor(props: Props) {
     super(props);
     this.state = { items: [], filterItems: [], text: "" };
     this.handleChange = this.handleChange.bind(this);
@@ -18,24 +26,24 @@ class SportList extends React.Component {
     this.setState({ items: data, filterItems: this.sortData(data) });
   }
 
-  sortData(data) {
-    return data.sort((a, b) =>
+  sortData(data: Item[]) {
+    return data.sort((a: Item, b: Item) =>
       a.attributes?.name > b.attributes?.name
         ? 1
-        : b > a.attributes?.name
+        : b.attributes?.name > a.attributes?.name
         ? -1
         : 0
     );
   }
 
-  cleanSearch(search) {
+  cleanSearch(search: string) {
     return search
       .normalize("NFD")
       .replace(/[\u0300-\u036f]/g, "")
       .toUpperCase();
   }
 
-  handleChange(e) {
+  handleChange(e: any) {
     let itemsCopy = [...this.state.items];
     const filterItems = itemsCopy.filter((sport) =>
       this.cleanSearch(sport.attributes?.name ?? "").includes(
