@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sport trend Sport trend test 1`] = `
+<div>
+  <div
+    className="vtmn-flex vtmn-bg-brand-digital-light-3 vtmn-rounded-lg vtmn-p-6 vtmn-mb-5"
+  >
+    <p
+      className="vtmn-text-xl vtmn-text-center vtmn-font-semibold vtmn-text-black"
+    >
+      Sport
+      <span
+        className="vtmn-text-brand-digital vtmn-text-2xl"
+      >
+        Trend 
+        <span
+          className="vtmx-temp-hot-line inline-icon"
+        />
+      </span>
+    </p>
+  </div>
+  <div
+    className="vtmn-flex vtmn-justify-around"
+  >
+    <div>
+      <label
+        className="vtmn-text-input_label"
+        htmlFor="filter"
+      >
+        Filtrer
+      </label>
+      <div
+        className="vtmn-text-input_container"
+      >
+        <input
+          className="vtmn-text-input"
+          disabled={false}
+          id="filter"
+          onChange={[Function]}
+          type="text"
+        />
+      </div>
+      <p
+        className="vtmn-text-input_helper-text"
+      >
+        Filtrer les sports
+      </p>
+    </div>
+  </div>
+  <div
+    className="vtmn-flex vtmn-justify-around"
+  >
+    <ul />
+  </div>
+</div>
+`;

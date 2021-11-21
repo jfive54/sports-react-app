@@ -11,7 +11,7 @@ import SportTrend from "./components/SportTrend";
 function App() {
   return (
     <div className="App">
-      <SportTrend></SportTrend>
+      <SportTrend />
     </div>
   );
 }

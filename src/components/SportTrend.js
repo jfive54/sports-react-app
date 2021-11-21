@@ -2,7 +2,8 @@ import React from "react";
 
 import { VtmnTextInput } from "@vtmn/react";
 
-import configData from "../config.json";
+import { getSports } from "../services/sports-service";
+
 import Sports from "./Sports";
 
 class SportList extends React.Component {
@@ -12,43 +13,9 @@ class SportList extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  render() {
-    return (
-      <div>
-        <div className="vtmn-flex vtmn-bg-brand-digital-light-3 vtmn-rounded-lg vtmn-p-6 vtmn-mb-5">
-          <p className="vtmn-text-xl vtmn-text-center vtmn-font-semibold vtmn-text-black">
-            Sport
-            <span className="vtmn-text-brand-digital vtmn-text-2xl">
-              Trend <span className="vtmx-temp-hot-line inline-icon"></span>
-            </span>
-          </p>
-        </div>
-        <div className="vtmn-flex vtmn-justify-around">
-          <div>
-            <VtmnTextInput
-              labelText="Filtrer"
-              onChange={this.handleChange}
-              identifier="filter"
-              helperText="Filtrer les sports"
-            />
-          </div>
-        </div>
-        <div className="vtmn-flex vtmn-justify-around">
-          <Sports items={this.state.filterItems} />
-        </div>
-      </div>
-    );
-  }
-
-  componentDidMount() {
-    fetch(configData.SPORT_LIST_URL)
-      .then((res) => {
-        return res.json();
-      })
-      .then(({ data }) => {
-        this.setState({ items: data, filterItems: this.sortData(data) });
-      })
-      .catch(console.log);
+  async componentDidMount() {
+    const { data } = await getSports();
+    this.setState({ items: data, filterItems: this.sortData(data) });
   }
 
   sortData(data) {
@@ -80,6 +47,34 @@ class SportList extends React.Component {
       text: e.target.value,
       filterItems: this.sortData(filterItems),
     });
+  }
+
+  render() {
+    return (
+      <div>
+        <div className="vtmn-flex vtmn-bg-brand-digital-light-3 vtmn-rounded-lg vtmn-p-6 vtmn-mb-5">
+          <p className="vtmn-text-xl vtmn-text-center vtmn-font-semibold vtmn-text-black">
+            Sport
+            <span className="vtmn-text-brand-digital vtmn-text-2xl">
+              Trend <span className="vtmx-temp-hot-line inline-icon"></span>
+            </span>
+          </p>
+        </div>
+        <div className="vtmn-flex vtmn-justify-around">
+          <div>
+            <VtmnTextInput
+              labelText="Filtrer"
+              onChange={this.handleChange}
+              identifier="filter"
+              helperText="Filtrer les sports"
+            />
+          </div>
+        </div>
+        <div className="vtmn-flex vtmn-justify-around">
+          <Sports items={this.state.filterItems} />
+        </div>
+      </div>
+    );
   }
 }
 
