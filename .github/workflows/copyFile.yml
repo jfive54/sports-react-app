@@ -1,0 +1,22 @@
+name: Push File
+
+on: push
+
+jobs:
+  copy-file:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Pushes test file
+      uses: dmnemec/copy_file_to_another_repo_action@main
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.ACTIONCOPY }}
+      with:
+        source_file: 'doc-api/swagger.yaml'
+        destination_repo: 'jfive54/trend-api'
+        destination_folder: 'test-dir'
+        user_email: 'jorisfive@gmail.com'
+        user_name: 'jfive54'
+        commit_message: 'A custom message for the commit'
